@@ -9,5 +9,6 @@ public interface OrderService {
     List<Order> getAll();
 
     Order findById(Long id);
+    void deleteById(Long id);
 
 }

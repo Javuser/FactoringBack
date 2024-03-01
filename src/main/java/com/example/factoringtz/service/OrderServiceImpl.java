@@ -28,4 +28,9 @@ public class OrderServiceImpl implements OrderService{
     public Order findById(Long id) {
         return orderRepository.findById(id).orElseThrow(NullPointerException::new);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        orderRepository.deleteById(id);
+    }
 }

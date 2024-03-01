@@ -25,7 +25,7 @@ public class OrderController {
         return "Hello world!!";
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public List<Order> getAll() {
         return orderService.getAll();
     }
@@ -46,6 +46,12 @@ public class OrderController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteOrder(@PathVariable Long id){
+        orderService.deleteById(id);
+    }
+//    @GetMapping("/getAll")
 
 
 }
